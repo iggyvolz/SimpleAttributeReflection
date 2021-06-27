@@ -1,0 +1,23 @@
+{
+    "name": "iggyvolz/simple-attribute-reflection",
+    "description": "Simpler reflection for attributes",
+    "type": "library",
+    "license": "0BSD",
+    "autoload": {
+        "psr-4": {
+            "Iggyvolz\\SimpleAttributeReflection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Katie Volz",
+            "email": "iggyvolz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.8"
+    }
+}
