@@ -7,7 +7,7 @@ namespace Iggyvolz\SimpleAttributeReflection;
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionClassConstant;
-use ReflectionFunction;
+use ReflectionFunctionAbstract;
 use ReflectionProperty;
 use ReflectionParameter;
 
@@ -17,11 +17,11 @@ class AttributeReflection
 
     /**
      * @template T of object
-     * @param ReflectionFunction|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target
+     * @param ReflectionFunctionAbstract|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target
      * @param class-string<T> $type
      * @return list<T>
      */
-    public static function getAttributes(ReflectionFunction|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target, string $type): array
+    public static function getAttributes(ReflectionFunctionAbstract|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target, string $type): array
     {
         return array_values(array_map(
             /**
@@ -36,11 +36,11 @@ class AttributeReflection
     }
     /**
      * @template T of object
-     * @param ReflectionFunction|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target
+     * @param ReflectionFunctionAbstract|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target
      * @param class-string<T> $type
      * @return T|null
      */
-    public static function getAttribute(ReflectionFunction|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target, string $type): ?object
+    public static function getAttribute(ReflectionFunctionAbstract|ReflectionClass|ReflectionProperty|ReflectionClassConstant|ReflectionParameter $target, string $type): ?object
     {
         return self::getAttributes($target, $type)[0] ?? null;
     }
